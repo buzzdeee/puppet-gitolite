@@ -150,7 +150,7 @@ class gitolite (
   }
 
   exec { 'gitolite_setup':
-    command     => "gitolite setup -a dummy; mkdir ~/.gitolite/keydir",
+    command     => "gitolite setup -a admin; mkdir ~/.gitolite/keydir",
     user        =>  "${gitolite::user}",
     environment => [ "HOME=${userhome}" ],
     unless      => "test -d ~${user}/.gitolite",
